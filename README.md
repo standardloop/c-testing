@@ -8,6 +8,37 @@
 
 Repo for testing library for C.
 
+## Example
+
+### Program
+
+```c
+#include <standardloop/testing.h>
+
+int main(void)
+{
+    TestingInit();
+    TestCaseVerify(true, "will pass", 1 == 1);
+    TestCaseVerify(true, "will fail", 1 == 0);
+    TestCaseVerify(false, "will not run", 1 == 0);
+    TestingTearDown();
+}
+```
+
+### Output
+
+```txt
+[2026-09-18 22:59:23] Starting test run.....
+Test: "will fail" Failed! (1 == 0) in testing.test.c at line 7
+Test: "will not run" Skipped! (1 == 0) in testing.test.c at line 8
+--------results--------
+passed:   1
+failed:   1
+skipped:  1
+-----------------------
+[2026-09-18 22:59:23] Done!
+```
+
 ## Running
 
 This repo uses [task](https://github.com/go-task/task).

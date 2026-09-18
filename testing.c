@@ -4,15 +4,12 @@
 #include "./testing.h"
 #include <standardloop/logger.h>
 
-/**
- * @brief The Testing Struct
- */
-typedef struct
-{
+// typedef struct
+// {
 
-} TestOptions;
+// } TestOptions;
 
-static TestOptions options = {};
+// static TestOptions options = {};
 
 struct TestingResults
 {
@@ -49,7 +46,6 @@ extern void TestingInit()
 void testing(bool run, const char *name, bool condition, const char *expr,
              const char *file, int line)
 {
-    (void)options;
     InitLogger(standard_options);
     if (run)
     {
@@ -57,13 +53,13 @@ void testing(bool run, const char *name, bool condition, const char *expr,
         {
             results.failed++;
 
-            Log(ERROR, "\"%s\" Failed: (%s) in %s at line %d", name, expr, file,
-                line);
+            Log(ERROR, "Test: \"%s\" Failed! (%s) in %s at line %d", name, expr,
+                file, line);
         }
         else
         {
             results.passed++;
-            // Log(DEBUG, "\"%s\" Passed: (%s) in %s at line %d", name, expr,
+            // Log(DEBUG, "\"%s\" Passed! (%s) in %s at line %d", name, expr,
             // file,
             //     line);
         }
@@ -71,8 +67,8 @@ void testing(bool run, const char *name, bool condition, const char *expr,
     else
     {
         results.skipped++;
-        Log(WARN, "\"%s\" skipped: (%s) in %s at line %d", name, expr, file,
-            line);
+        Log(WARN, "Test: \"%s\" Skipped! (%s) in %s at line %d", name, expr,
+            file, line);
     }
 }
 

@@ -3,8 +3,8 @@
 extern void TestTesting()
 {
     TestingInit();
-    Verify(true, "will pass", 1 == 1);
-    Verify(true, "will fail", 1 == 0);
-    Verify(false, "will not run", 1 == 0);
+    TestCaseVerify(true, "will pass", 1 == 1);
+    TestCaseVerify(true, "will fail", 1 == 0);
+    TestCaseVerify(false, "will not run", 1 == 0);
     TestingTearDown();
 }

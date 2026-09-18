@@ -2,8 +2,8 @@
 version: "3"
 
 includes:
-  # c: https://raw.githubusercontent.com/standardloop/taskfiles/refs/heads/main/c.yml # ../taskfiles/c.yml # can pin in future
-  c: ../taskfiles/c.yml
+  c: https://raw.githubusercontent.com/standardloop/taskfiles/refs/heads/main/c.yml # ../taskfiles/c.yml
+  # c: ../taskfiles/c.yml
 
 vars:
   DYN_LIBS_USED: "-lstandardloop-logger -lstandardloop-collections -lstandardloop-util"

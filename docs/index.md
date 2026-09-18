@@ -4,11 +4,13 @@
 
 ---
 
-### Verify
+### TestCaseVerify
 
 ```cpp
-#define Verify(run, name, condition) testing(run, name, (condition), #condition, __FILE__, __LINE__)
+#define TestCaseVerify(run, name, condition) testing(run, name, (condition), #condition, __FILE__, __LINE__)
 ```
+
+The main point of this library, a macro for checking a test case instead of using `assert()`.
 
 ## Functions
 
@@ -17,13 +19,17 @@
 ### TestingInit
 
 ```cpp
-void TestingInit()
+void TestingInit(void)
 ```
+
+A function to Initialize a Testing Run.
 
 ---
 
 ### TestingTearDown
 
 ```cpp
-void TestingTearDown()
+void TestingTearDown(void)
 ```
+
+A function to Complete and Tear Down a Testing Run.
