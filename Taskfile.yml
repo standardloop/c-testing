@@ -1,0 +1,51 @@
+---
+version: "3"
+
+silent: true
+
+includes:
+  c: https://raw.githubusercontent.com/standardloop/taskfiles/refs/heads/main/c.yml # ../taskfiles/c.yml # can pin in future
+
+vars:
+  DYN_LIBS_USED: "-lstandardloop-logger"
+  TEST_EXECUTABLE_NAME: test
+  SOURCE_FILES:
+    - todo.c
+  TEST_SOURCE_FILES:
+    - todo.test.c
+  # for releasing
+  DYLIB_NAME: libstandardloop-todo.dylib
+  DYLIB_HEADER: todo.h
+
+tasks:
+  default:
+    silent: true
+    desc: "Show all avaiable tasks."
+    cmds:
+      - task --list-all
+
+  dependencies:
+    deps:
+      - c:dependencies:logger
+
+  release:
+    deps:
+      - c:release
+
+  test:build:
+    deps:
+      - dependencies
+    cmds:
+      - task: c:test:build
+
+  clean:
+    deps:
+      - c:test:clean
+
+  fmt:
+    deps:
+      - c:fmt
+
+  docs:
+    deps:
+      - c:docs
