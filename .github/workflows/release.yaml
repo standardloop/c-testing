@@ -10,9 +10,9 @@ jobs:
     permissions:
       contents: write
     env:
-      DYLIB_NAME: "libstandardloop-todo.dylib"
-      HEADER_NAME: "todo.h"
-      ZIP_NAME: "libstandardloop-todo.zip"
+      DYLIB_NAME: "libstandardloop-testing.dylib"
+      HEADER_NAME: "testing.h"
+      ZIP_NAME: "libstandardloop-testing.zip"
       CI: true
 
     steps:

@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#include "./todo.h"
+#include "./testing.h"
 #include <standardloop/logger.h>
 
-void Todo(void)
+void Testing(void)
 {
     Log(TRACE, "hello");
 }

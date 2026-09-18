@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./todo.h"
+#include "./testing.h"
 
 int main(void)
 {
     InitLogger(TRACE, STANDARD_FMT, false, true, true, true);
-    Todo();
+    TestTesting();
     assert(1);
     return EXIT_SUCCESS;
 }
