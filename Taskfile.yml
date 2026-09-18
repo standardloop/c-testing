@@ -31,7 +31,9 @@ tasks:
 
   release:
     deps:
-      - c:release
+      - dependencies
+    cmds:
+      - task: c:release
 
   test:build:
     deps:
