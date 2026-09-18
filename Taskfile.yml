@@ -6,7 +6,8 @@ includes:
   # c: ../taskfiles/c.yml
 
 vars:
-  DYN_LIBS_USED: "-lstandardloop-logger -lstandardloop-collections -lstandardloop-util"
+  #DYN_LIBS_USED: "-lstandardloop-logger -lstandardloop-collections -lstandardloop-util"
+  DYN_LIBS_USED: "-lstandardloop-logger"
   TEST_EXECUTABLE_NAME: test
   SOURCE_FILES:
     - testing.c
@@ -25,9 +26,9 @@ tasks:
     aliases:
       - deps
     cmds:
-      - task: c:dependencies:logger:latest
-      - task: c:dependencies:util:latest
-      - task: c:dependencies:collections:latest
+      - task: c:dependencies:logger
+      # - task: c:dependencies:util
+      # - task: c:dependencies:collections
 
   release:
     deps:
@@ -82,10 +83,10 @@ tasks:
     deps:
       - test:build
     cmds:
-      - cp /usr/local/lib/standardloop/libstandardloop-util.dylib ./
-      - cp /usr/local/lib/standardloop/libstandardloop-collections.dylib ./
+      # - cp /usr/local/lib/standardloop/libstandardloop-util.dylib ./
+      # - cp /usr/local/lib/standardloop/libstandardloop-collections.dylib ./
       - cp /usr/local/lib/standardloop/libstandardloop-logger.dylib ./
       - leaks --atExit -- ./{{.TEST_EXECUTABLE_NAME}}
-      - rm libstandardloop-util.dylib
-      - rm libstandardloop-collections.dylib
+      # - rm libstandardloop-util.dylib
+      # - rm libstandardloop-collections.dylib
       - rm libstandardloop-logger.dylib
