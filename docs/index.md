@@ -1,11 +1,29 @@
 # API Reference
 
+## Macros
+
+---
+
+### Verify
+
+```cpp
+#define Verify(run, name, condition) testing(run, name, (condition), #condition, __FILE__, __LINE__)
+```
+
 ## Functions
 
 ---
 
-### Testing
+### TestingInit
 
 ```cpp
-void Testing(char * name, bool expression)
+void TestingInit()
+```
+
+---
+
+### TestingTearDown
+
+```cpp
+void TestingTearDown()
 ```
