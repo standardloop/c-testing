@@ -23,10 +23,12 @@ tasks:
       - task: test
 
   dependencies:
+    aliases:
+      - deps
     cmds:
-      - task: c:dependencies:logger
-      - task: c:dependencies:util
-      - task: c:dependencies:collections
+      - task: c:dependencies:logger:latest
+      - task: c:dependencies:util:latest
+      - task: c:dependencies:collections:latest
 
   release:
     deps:

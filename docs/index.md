@@ -7,5 +7,5 @@
 ### Testing
 
 ```cpp
-void Testing(void)
+void Testing(char * name, bool expression)
 ```
